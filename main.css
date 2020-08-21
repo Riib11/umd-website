@@ -1,0 +1,289 @@
+/* root */
+
+@font-face {
+  font-family: spectral;
+  src: url(assets/fonts/Spectral-Regular.ttf);
+}
+
+:root {
+  --font-family-title: helvetica;
+  --font-family-body: spectral;
+  --font-family-tag: helvetica;
+
+  --font-size-huge: 24pt;
+  --font-size-huge-mobile: 32pt;
+
+  --font-size-large: 18pt;
+  --font-size-large-mobile: 20pt;
+
+  --font-size-normal: 12pt;
+  --font-size-normal-mobile: 16pt;
+
+  --font-size-small: 12pt;
+  --font-size-small-mobile: 12pt;
+}
+
+/* html */
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(assets/images/background-pixellated.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  font-family: spectral;
+}
+
+body.mobile {
+  background: url(assets/images/background-pixellated-mobile.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* main */
+
+main {
+  margin: auto;
+  margin-top: 100px;
+  height: 600px;
+  width: 720px;
+
+  /* box-shadow: 0 0 0 1px black; */
+}
+
+main.mobile {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+
+.buffer {
+  margin: 10px;
+}
+
+/* sidebar */
+
+.sidebar {
+  position: fixed;
+  width: 300px;
+  min-height: 200px;
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px 0px gray;
+}
+
+.sidebar::-webkit-scrollbar {
+  opacity: 0;
+  width: 5px;
+}
+
+.sidebar.mobile {
+  position: relative;
+  width: 100%;
+  min-height: none;
+  max-height: none;
+  overflow-y: visible;
+}
+
+
+.title {
+  margin-bottom: 20px;
+  padding-top: 10px;
+
+  font-size: var(--font-size-huge);
+  text-align: center;
+  font-family: helvetica;
+}
+
+.title.mobile {
+  font-size: 32pt;
+}
+
+.description {
+  font-size: var(--font-size-normal);
+  margin-bottom: 20px;
+}
+
+.description.mobile {
+  font-size: var(--font-size-normal-mobile);
+}
+
+.accounts {
+  margin-bottom: 20px;
+}
+
+.account-a {
+  display: block;
+  margin: 4px;
+}
+
+.account-img {
+  width: 40px;
+  height: 40px;
+}
+
+.account-description {
+  font-size: var(--font-size-normal);
+  margin: 4px;
+}
+
+.account-description.mobile {
+  font-size: var(--font-size-normal-mobile);
+}
+
+/* content */
+
+.content {
+  margin-left: 320px;
+  width: 400px;
+  padding-bottom: 100px;
+}
+
+.content.mobile {
+  margin: auto;
+  width: 100%;
+}
+
+.content > .buffer {
+  margin-top: 0;
+}
+
+.search {
+  align-items: center;
+  vertical-align: middle;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+.search.mobile {
+  height: 50px;
+}
+
+.search-input {
+  display: block;
+  position: absolute;
+  width: 100%;
+  outline: none;
+  width: calc(100% - 50px);
+
+  font-size: var(--font-size-normal);
+  color: black;
+  background-color: rgba(40, 43, 76, 0.3);
+}
+
+.search-input::placeholder {
+  color: rgb(75, 75, 75);
+}
+
+.search-input.mobile {
+  width: calc(100% - 70px);
+  font-size: var(--font-size-normal-mobile);
+}
+
+.search-clear {
+  display: block;
+  position: absolute;
+  left: calc(100% - 30px);
+  margin-top: 4px;
+  width: 20px;
+  height: 20px;
+
+  font-family: var(--font-family-title);
+  border: none;
+  outline: none;
+  text-align: center;
+  color: white;
+  background-color: gray;
+}
+
+.search-clear.mobile {
+  left: calc(100% - 45px);
+  margin-top: 3px;
+  width: 30px;
+  height: 30px;
+
+  font-size: var(--font-size-normal-mobile);
+}
+
+.item {
+  width: 100%;
+  padding: 1px 0;
+  margin-bottom: 20px;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px 0px gray;
+}
+
+.item-hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.item-a {
+  color: rgb(76, 55, 40);
+  text-decoration: overline;
+  font-family: helvetica;
+}
+
+.item-title {
+  font-size: var(--font-size-large);
+
+  font-family: var(--font-family-title);
+  margin-bottom: 5px;
+}
+
+.item-title.mobile {
+  font-size: var(--font-size-large-mobile);
+}
+
+.item-tags {
+ margin-bottom: 10px;
+}
+
+.item-tag {
+  display: inline-block;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family-tag);
+  font-style: italic;
+
+  cursor: pointer;
+
+  color: rgb(73, 40, 76);
+}
+
+.item-tag.mobile {
+  font-size: var(--font-size-small-mobile);
+}
+
+.item-description {
+  margin-bottom: 10px;
+
+  font-size: var(--font-size-normal);
+}
+
+.item-description.mobile {
+  font-size: var(--font-size-normal-mobile);
+}
+
+.item-date {
+  color: rgb(73, 100, 76);
+  font-size: var(--font-size-small);
+}
+
+.item-date.mobile {
+  font-size: var(--font-size-normal-mobile);
+}
